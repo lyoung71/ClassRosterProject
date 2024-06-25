@@ -4,6 +4,9 @@
 #include "degree.h"
 using namespace std;
 
+#ifndef STUDENT_H
+#define STUDENT_H
+
 class Student {
     public:
         Student();
@@ -13,7 +16,7 @@ class Student {
         string GetEmail();
         int GetAge();
         int GetDays();
-        int GetDegree();
+        enum DegreeProgram GetDegree();
 
         void SetID(string ID);
         void SetFirstName(string first);
@@ -31,7 +34,9 @@ class Student {
         string lastName;
         string emailAddress;
         int age;
-        int daysToComplete[3];
-        DegreeProgram program;
+        int daysToComplete[3] = {1, 1, 1};
+        enum DegreeProgram degreeProgram;
 
 };
+
+#endif
