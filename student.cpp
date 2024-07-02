@@ -3,17 +3,16 @@
 #include <string>
 #include "student.h"
 
-Student::Student() {
-    studentID = "No ID";
-    firstName = "No first name";
-    lastName = "No last name";
-    emailAddress = "No email address";
-    age = -1;
-    daysToComplete[2] = {};
-    degreeProgram = {};
+Student::Student(){}
+Student::Student(string studID, string fN, string lN, string email, int studAge, int days[3], DegreeProgram prog) {
+    studentID = studID;
+    firstName = fN;
+    lastName = lN;
+    emailAddress = email;
+    age = studAge;
+    daysToComplete[2] = days[3];
+    degreeProgram = prog;
 }
-
-
 string Student::GetID() {
     return studentID;
 }

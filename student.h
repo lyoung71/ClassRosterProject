@@ -10,6 +10,7 @@ using namespace std;
 class Student {
     public:
         Student();
+        Student(string studID, string fN, string lN, string email, int studAge, int days[3], DegreeProgram prog);
         string GetID();
         string GetFirstName();
         string GetLastName();
@@ -34,9 +35,8 @@ class Student {
         string lastName;
         string emailAddress;
         int age;
-        int daysToComplete[3] = {1, 1, 1};
+        int daysToComplete[3];
         enum DegreeProgram degreeProgram;
-
 };
 
 #endif
