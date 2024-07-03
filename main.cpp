@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "student.h"
-#include "roster.h"
+#include "student.cpp"
+#include "roster.cpp"
 #include "degree.h"
 
 using namespace std;

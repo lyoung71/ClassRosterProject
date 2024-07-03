@@ -24,40 +24,49 @@ void Roster::add() {
         currSentence = studentData[i];
         pos = currSentence.find(",");
         studentID = currSentence.substr(0, pos);
+        cout << studentID << endl;
+        cout << currSentence << endl;
 
         pos = pos + 1;
-        nextPos = currSentence.find(",");
-        firstName = currSentence.substr(pos, nextPos);
+        nextPos = currSentence.find(",", pos);
+        firstName = currSentence.substr(pos, (nextPos - pos));
+        cout << firstName << endl;
 
-        pos = pos + 1;
-        nextPos = currSentence.find(",");
-        lastName = currSentence.substr(pos, nextPos);
+        pos = nextPos + 1;
+        nextPos = currSentence.find(",", pos);
+        lastName = currSentence.substr(pos, (nextPos - pos));
+        cout << lastName << endl;
 
-        pos = pos + 1;
-        nextPos = currSentence.find(",");
-        emailAddress = currSentence.substr(pos, nextPos);
+        pos = nextPos + 1;
+        nextPos = currSentence.find(",", pos);
+        emailAddress = currSentence.substr(pos, (nextPos - pos));
+        cout << emailAddress << endl;
 
-        pos = pos + 1;
-        nextPos = currSentence.find(",");
-        age = stoi(currSentence.substr(pos, nextPos));
+        pos = nextPos + 1;
+        nextPos = currSentence.find(",", pos);
+        age = stoi(currSentence.substr(pos, (nextPos - pos)));
+        cout << age << endl;
 
-        pos = pos + 1;
-        nextPos = currSentence.find(",");
-        daysInCourse1 = stoi(currSentence.substr(pos, nextPos));
-        cout << daysInCourse1<< endl;
+        pos = nextPos + 1;
+        nextPos = currSentence.find(",", pos);
+        daysInCourse1 = stoi(currSentence.substr(pos, (nextPos - pos)));
+        cout << daysInCourse1 << endl;
 
-        pos = pos + 1;
-        nextPos = currSentence.find(",");
-        daysInCourse2 = stoi(currSentence.substr(pos, nextPos));
+        pos = nextPos + 1;
+        nextPos = currSentence.find(",", pos);
+        daysInCourse2 = stoi(currSentence.substr(pos, (nextPos - pos)));
+        cout << daysInCourse2 << endl;
 
-        pos = pos + 1;
-        nextPos = currSentence.find(",");
-        daysInCourse3 = stoi(currSentence.substr(pos, nextPos));
+        pos = nextPos + 1;
+        nextPos = currSentence.find(",", pos);
+        daysInCourse3 = stoi(currSentence.substr(pos, (nextPos - pos)));
+        cout << daysInCourse3 << endl;
+
         daysList[0] = daysInCourse1;
         daysList[1] = daysInCourse2;
         daysList[2] = daysInCourse3;
 
-        pos = pos + 1;
+        pos = nextPos + 1;
         strLength = currSentence.size();
         programString = currSentence.substr(pos, strLength);
         if (programString == "SOFTWARE") {
@@ -67,7 +76,7 @@ void Roster::add() {
         } else if (programString == "SECURITY") {
             degreeProgram = SECURITY;
         }
-
+        cout << degreeProgram << endl;
         Student newStudent(studentID, firstName, lastName, emailAddress, age, &daysList[2], degreeProgram);
         this->classRosterArray[i] = &newStudent;
         };
@@ -76,7 +85,7 @@ void Roster::add() {
 // void remove(string studentID);
 void Roster::printAll() {
     for (i = 0; i < 5; ++i) {
-        classRosterArray[i]->Print();
+        this->classRosterArray[i]->Print();
     };
 };
 // void printAverageDaysInCourse(string studentID);

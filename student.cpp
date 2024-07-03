@@ -3,6 +3,7 @@
 #include <string>
 #include "student.h"
 
+
 Student::Student(){}
 Student::Student(string studID, string fN, string lN, string email, int studAge, int days[3], DegreeProgram prog) {
     studentID = studID;
@@ -37,31 +38,31 @@ DegreeProgram Student::GetDegree() {
 
 //Setter Functions
 void Student::SetID(string ID) {
-    studentID = ID;
+    this->studentID = ID;
 }
 
 void Student::SetFirstName(string first) {
-    firstName = first;
+    this->firstName = first;
 }
 
 void Student::SetLastName(string last) {
-    lastName = last;
+    this->lastName = last;
 }
 
 void Student::SetEmail(string email) {
-    emailAddress = email;
+    this->emailAddress = email;
 }
 
 void Student::SetAge(int studentAge) {
-    age = studentAge;
+    this->age = studentAge;
 }
 
 void Student::SetDays(int daysLeft) {
-    daysToComplete[2] = daysLeft;
+    this->daysToComplete[2] = daysLeft;
 }
 
 void Student::SetDegree(DegreeProgram degProg) {
-    degreeProgram = degProg;
+    this->degreeProgram = degProg;
 }
 
 void Student::Print() {
