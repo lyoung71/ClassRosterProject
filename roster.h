@@ -13,6 +13,7 @@ DegreeProgram degreeProgram;
 class Roster {
     public:
         Roster();
+        ~Roster();
         void add();
         // void remove(string studentID);
         void printAll();

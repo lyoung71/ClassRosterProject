@@ -10,7 +10,7 @@ using namespace std;
 class Student {
     public:
         Student();
-        Student(string studID, string fN, string lN, string email, int studAge, int days[3], DegreeProgram prog);
+        Student(string studID, string fN, string lN, string email, int studAge, int day1, int day2, int day3, DegreeProgram prog);
         string GetID();
         string GetFirstName();
         string GetLastName();
@@ -24,10 +24,10 @@ class Student {
         void SetLastName(string last);
         void SetEmail(string email);
         void SetAge(int studentAge);
-        void SetDays(int daysLeft);
+        void SetDays(int days1, int days2, int days3);
         void SetDegree(DegreeProgram degProg);
 
-        void Print();
+        void Print() const;
 
     private:
         string studentID;

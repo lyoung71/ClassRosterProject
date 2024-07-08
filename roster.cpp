@@ -16,8 +16,10 @@ const string studentData[] =
 
 Roster::Roster() {
     int size = 5;
-    Student *classRosterArray = new Student[size];
+    Student* classRosterArray = new Student[size];
 };
+
+Roster::~Roster() {};
 
 void Roster::add() {
     for (i = 0; i < 5; ++i) {
@@ -62,10 +64,6 @@ void Roster::add() {
         daysInCourse3 = stoi(currSentence.substr(pos, (nextPos - pos)));
         cout << daysInCourse3 << endl;
 
-        daysList[0] = daysInCourse1;
-        daysList[1] = daysInCourse2;
-        daysList[2] = daysInCourse3;
-
         pos = nextPos + 1;
         strLength = currSentence.size();
         programString = currSentence.substr(pos, strLength);
@@ -76,8 +74,10 @@ void Roster::add() {
         } else if (programString == "SECURITY") {
             degreeProgram = SECURITY;
         }
+
         cout << degreeProgram << endl;
-        Student newStudent(studentID, firstName, lastName, emailAddress, age, &daysList[2], degreeProgram);
+
+        Student newStudent(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
         this->classRosterArray[i] = &newStudent;
         };
     };
@@ -85,7 +85,7 @@ void Roster::add() {
 // void remove(string studentID);
 void Roster::printAll() {
     for (i = 0; i < 5; ++i) {
-        this->classRosterArray[i]->Print();
+        classRosterArray[i]->Print();
     };
 };
 // void printAverageDaysInCourse(string studentID);

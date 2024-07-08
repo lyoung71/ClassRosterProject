@@ -5,13 +5,15 @@
 
 
 Student::Student(){}
-Student::Student(string studID, string fN, string lN, string email, int studAge, int days[3], DegreeProgram prog) {
+Student::Student(string studID, string fN, string lN, string email, int studAge, int days1, int days2, int days3, DegreeProgram prog) {
     studentID = studID;
     firstName = fN;
     lastName = lN;
     emailAddress = email;
     age = studAge;
-    daysToComplete[2] = days[3];
+    daysToComplete[0] = days1;
+    daysToComplete[1] = days2;
+    daysToComplete[2] = days3;
     degreeProgram = prog;
 }
 string Student::GetID() {
@@ -57,20 +59,23 @@ void Student::SetAge(int studentAge) {
     this->age = studentAge;
 }
 
-void Student::SetDays(int daysLeft) {
-    this->daysToComplete[2] = daysLeft;
+void Student::SetDays(int days1, int days2, int days3) {
+    this->daysToComplete[0] = days1;
+    this->daysToComplete[1] = days2;
+    this->daysToComplete[2] = days3;
+
 }
 
 void Student::SetDegree(DegreeProgram degProg) {
     this->degreeProgram = degProg;
 }
 
-void Student::Print() {
-    cout << studentID << endl;
-    cout << firstName << endl;
-    cout << lastName << endl;
-    cout << emailAddress << endl;
-    cout << age << endl;
-    cout << daysToComplete << endl;
-    cout << degreeProgram << endl;
+void Student::Print() const {
+    cout << studentID <<
+        "\t First Name: " << firstName <<
+        "\t Last Name: " << lastName <<
+        "\t Age: " << this->age <<
+        "\t daysInCourse: " << this->daysToComplete <<
+        "\t Degree Program: " << this->degreeProgram << "\n";
+
 }
